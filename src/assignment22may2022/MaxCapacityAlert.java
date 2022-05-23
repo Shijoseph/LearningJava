@@ -7,7 +7,7 @@ public class MaxCapacityAlert {
 		int maxCapacity =50;
 		int customerCurrentlyShopping=50;
 		
-		int customergoingOut=100;
+		int customergoingOut=10;
 		int allowedCapacity=0;
 		
 		int currentCapcity = customerCurrentlyShopping-customergoingOut;
@@ -15,7 +15,7 @@ public class MaxCapacityAlert {
 		
 		while (currentCapcity<maxCapacity )
 		{
-		boolean aa = customergoingOut <= customerCurrentlyShopping;
+		
 			
 		allowedCapacity = maxCapacity - currentCapcity;
 		
