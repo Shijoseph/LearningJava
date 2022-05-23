@@ -5,16 +5,19 @@ public class MaxCapacityAlert {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int maxCapacity =50;
-		int customerCurrentlyShopping=40;
-	 
-		int customergoingOut=40;
-		int customerComingIn =50;
-		int currentCapcity = customerCurrentlyShopping-customergoingOut+customerComingIn;
+		int customerCurrentlyShopping=50;
+		
+		int customergoingOut=100;
 		int allowedCapacity=0;
 		
+		int currentCapcity = customerCurrentlyShopping-customergoingOut;
+		
+		
 		while (currentCapcity<maxCapacity )
+		{
+		boolean aa = customergoingOut <= customerCurrentlyShopping;
 			
-		{allowedCapacity = maxCapacity - currentCapcity;
+		allowedCapacity = maxCapacity - currentCapcity;
 		
 		System.out.println("number of clients eligble to enter shop : "+ allowedCapacity);
 		
@@ -22,13 +25,13 @@ public class MaxCapacityAlert {
 		break;}
 		
 		
+	
 		
-		
-		if(currentCapcity>=maxCapacity)
-		
-		
-			System.out.println("max capacity 50 reached");
-			
-		}
-}
+	if(currentCapcity>=maxCapacity)
 
+	{
+
+		System.out.println("max capacity 50 reached");
+
+	}
+}}
