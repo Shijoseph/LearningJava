@@ -6,13 +6,14 @@ public class IfElseBookingTicket {
 		// TODO Auto-generated method stub
 
 		int totalTicket = 500;
-		int bookedTicket = 22;
+		int bookedTicket = 500;
 		
-		int ticketsRequired = 1000;
+		int ticketsRequired = 300;
 		
-		if(ticketsRequired < ( totalTicket - bookedTicket))
+		if(ticketsRequired <= ( totalTicket - bookedTicket))
 		{
 			System.out.println("booking accepted ");
+			
 		}
 		else
 		{
