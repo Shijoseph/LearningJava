@@ -6,7 +6,7 @@ public class VerfiyUsernameandPassword {
 		// TODO Auto-generated method stub
 		
 		String correctUsername ="Mathew123";
-		String correctPassword = "Canada@456";
+		String correctPassword = "anada@456";
 		
 		String enteredUsername = "Mathew123";
 		String enteredPassword = "Canada@456";
@@ -16,7 +16,7 @@ public class VerfiyUsernameandPassword {
 		
 		boolean isLoginCorrect = isUsernameCorrect && isPasswordCorrect;
 		
-		System.out.println("entered Username & Password match  "+isLoginCorrect);
+		System.out.println("entered Username or Password mismatch  "+isLoginCorrect);
 	}
 
 }
