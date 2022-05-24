@@ -7,7 +7,7 @@ public class MaxCapacityAlert {
 		int maxCapacity =50;
 		int customerCurrentlyShopping=50;
 		
-		int customergoingOut=10;
+		int customergoingOut=40;
 		int allowedCapacity=0;
 		
 		int currentCapcity = customerCurrentlyShopping-customergoingOut;
