@@ -6,7 +6,6 @@ public class MaxCapacityAlert {
 		// TODO Auto-generated method stub
 		int maxCapacity =50;
 		int customerCurrentlyShopping=50;
-		
 		int customergoingOut=40;
 		int allowedCapacity=0;
 		
