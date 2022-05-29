@@ -1,11 +1,23 @@
 package assignment22may2022;
 
+import java.util.Scanner;
+
 public class IssueLicense {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int ageOfDriver = 15;
-		String licenseType = " ";
+		int ageOfDriver = 0;
+				System.out.println("enter the age of the driver");
+		
+		
+		Scanner sc = new Scanner(System.in);
+		ageOfDriver =sc.nextInt()
+;		
+		String licenseType ="";
+		System.out.println("enter the license type");
+		licenseType = sc.next();
+		
+		
 		
 		if(ageOfDriver >=16 && licenseType.equals("g1"))
 			
@@ -25,11 +37,13 @@ public class IssueLicense {
 		System.out.println("driver is eligible to apply for G");
 		
 		}else if(ageOfDriver >=16 && licenseType.equals("G"))
-		{System.out.println("current lincese for the driver is G");
+		{System.out.println("current license for the driver is G");
+		System.out.println("driver is eligible to reissue G");
 		}
 		
 		else if(ageOfDriver >=16 && licenseType.equals("g"))
-		{System.out.println("current lincese for the driver is G");
+		{System.out.println("current license for the driver is G");
+		System.out.println("driver is eligible to reissue G");
 		}
 		
 		else if(ageOfDriver >=16 && licenseType.equals(" "))
