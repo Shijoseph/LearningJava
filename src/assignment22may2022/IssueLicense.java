@@ -7,17 +7,17 @@ public class IssueLicense {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int ageOfDriver = 0;
-				System.out.println("enter the age of the driver");
+				System.out.println("enter the age of the driver");// to be displayed in console to enter the value
 		
 		
 		Scanner sc = new Scanner(System.in);
-		ageOfDriver =sc.nextInt()
+		ageOfDriver =sc.nextInt()//value from the console is stored
 ;		
 		String licenseType ="";
-		System.out.println("enter the license type");
-		licenseType = sc.next();
+		System.out.println("enter the license type");// to be displayed in console to enter the value
+		licenseType = sc.next();// value entered in the console is stored
 		
-		
+		// use if else to check the different conditions
 		
 		if(ageOfDriver >=16 && licenseType.equals("g1"))
 			
@@ -49,6 +49,6 @@ public class IssueLicense {
 		else if(ageOfDriver >=16 && licenseType.equals(" "))
 		{System.out.println("enter a valid license type");
 		}
-		else
+		else// if age is <16
 		{System.out.println("not eligible for drivers license");
 }}}
