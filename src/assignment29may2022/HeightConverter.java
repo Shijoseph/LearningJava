@@ -22,16 +22,25 @@ public class HeightConverter {
 		
 		System.out.println("enter the  inche part of the height");
 		
+		
+		
 		enteredHeightinInches = sc.nextInt();
 		
+		if(enteredHeightinInches<=12)
+		{
 		
-		double totalheightinCm= (30.48*enteredHeightinFeet) + (2.54*enteredHeightinInches);// using a third variable we calculate the height in centimetre
 		
-		System.out.println("height of the person in centimetres  =  "  +totalheightinCm);// pritnign the value
+		double totalHeightinCm= (30.48*enteredHeightinFeet) + (2.54*enteredHeightinInches);// using a third variable we calculate the height in centimetre
+		
+		System.out.println("height of the person in centimetres  =  "  +totalHeightinCm);// priting the value
 		
 		
 	}
-		
+		else {
+			
+			System.out.println("enter a value for inches ,should be in range 1-11");
+		}
+		}
 
 
 }

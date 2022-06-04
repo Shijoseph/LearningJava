@@ -26,7 +26,7 @@ public class TemperatureTable {
 			
 			 tempInCelsius = sc.nextDouble();
 			
-			double tempInCelsiusFortable = tempInCelsius-25;
+			double tempInCelsiusFortable = tempInCelsius-20;
 			
 			while(tempInCelsiusFortable<=25)// to display value in the range +- 25 for celsius
 			{
@@ -48,7 +48,7 @@ public class TemperatureTable {
 			
 			 tempInFarhenhiet = sc.nextDouble();
 			
-			double tempInFarhenhietFortable =tempInFarhenhiet-25;
+			double tempInFarhenhietFortable =tempInFarhenhiet-20;
 			
 			
 			//to display value in the range +- 25 for celsius
