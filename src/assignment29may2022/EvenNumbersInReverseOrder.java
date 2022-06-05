@@ -7,11 +7,15 @@ public class EvenNumbersInReverseOrder {
 
 		// using for loop
 
-		for (int number = 100; number >= 2; number -= 2)// number in reverse order as mentioned in the question
+		for (int number = 100; number >= 2; number --)// number in reverse order as mentioned in the question
 		{
+			if(number%2 ==0)
+			{
 			System.out.println("the even number is  = " + number);
 
+		}else {
+			System.out.println("the number is odd = "  +number);
 		}
 
 	}
-}
+	}}
