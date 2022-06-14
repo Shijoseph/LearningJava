@@ -8,9 +8,9 @@ public class phoneBrandSelection {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String[] samsung = { " S20", " S21", "Flip3", "Fold3" };
-		String[] google = { "googlepixel6", "googlepixel6 Pro", "googlepixelpro", "googlepixel5" };
-		String[] apple = { " iphone12", "iphone12mini", "iphone11mini", "iphone11" };
+		String[] samsung = { "S20", "S21", "Flip3", "Fold3" };
+		String[] google = { "google pixel6", "googlepixel6 Pro", "googlepixelpro", "googlepixel5" };
+		String[] apple = { "iphone12", "iphone12mini", "iphone11mini", "iphone11" };
 
 		String enterTheBrand = " ";
 
@@ -107,5 +107,4 @@ public class phoneBrandSelection {
 		}
 			sc.close();
 		}
-	}
-}
+	}}
