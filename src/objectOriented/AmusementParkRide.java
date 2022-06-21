@@ -1,33 +1,25 @@
 package objectOriented;
 
-import java.util.Scanner;
-
 public class AmusementParkRide {
-
-	double height;
-	double weight;
+	
+ 
 	
 
+	String parkname ="wonderla";
+	String  parkaddress  = "123 street Ontario ,canada";
 	
-	
-	void entereddetails(double newHeight1,double newWeight1 )
+	boolean checkEligibility(int height, int weight)
+
 	{
-		height = newHeight1;
-		weight = newWeight1;
+		if ((height > 90 && height < 200) && (weight > 15 && weight < 95)) 
 		
-		
+		{//System.out.println("eligible  for ride");
+			return true;
+		} else {
+			//System.out.println(" not eligible  for ride");
+			return false;
+		}
 	}
 	
-	void ifeligibleforride()
-	{
-		if(height>=90 && height<=200)
-	{ if(weight>=15 && weight <=90)
-	{
-	System.out.println("eligble for amusement  park ride as height is  " + height  + " and weight is  "+weight);
-	}
-}
-		else
-			{System.out.println("not eligible for amusement park ride  as height is  " + height  + " and weight is  "+weight);
-	}
-}
+
 }
