@@ -6,6 +6,8 @@ public class Laptop {
 	String laptopName;
 	int ramSize;
 	String processorType;
+	int price;
+	int quantity;
 
 	// non argument constructor
 	Laptop() {
@@ -13,10 +15,12 @@ public class Laptop {
 	}
 
 	// constructor for step 3
-	Laptop(String laptopName3, int ramSize3, String processorType3) {
+	Laptop(String laptopName3, int ramSize3, String processorType3,int price,int quantity) {
 		laptopName = laptopName3;
 		processorType = processorType3;
 		ramSize = ramSize3;
+		this.price=price;
+		this.quantity=quantity;
 	}
 
 	// line 12- 15 for step 2
