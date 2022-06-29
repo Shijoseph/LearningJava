@@ -1,19 +1,19 @@
 package atmProject;
 
-public class ATM {
+public class Person {
 
-	long atmCardNumber;
-	int atmCardPin;
+	 long atmCardNumber;
+	 int atmCardPin;
 	String accountHoldersName;
 	String accountType;
 	double accountBalance;
 
-	ATM()
+	Person()
 
 	{
 	}
 
-	public ATM(long atmCardNumber, int atmCardPin, String accountHoldersName, double accountBalance,
+	public Person(long atmCardNumber, int atmCardPin, String accountHoldersName, double accountBalance,
 			String accountType) {
 
 		this.atmCardNumber = atmCardNumber;
@@ -26,16 +26,16 @@ public class ATM {
 
 	
 	
-	public void accountdetails(ATM A)
+	public void accountdetails(Person A)
 	{System.out.println("name of the accoutn holder is = "+ A.accountHoldersName);
 	System.out.println("account type is  = "+ A.accountType);
 	System.out.println(" balance in the account is  " + A.accountBalance);
 
 	}
-	public boolean validation(ATM A, int atmPin, long atmCardNum)
+	public boolean validation(Person A, int atmPin)
 
 	{
-		if(A.atmCardNumber == atmCardNum &&(A.atmCardPin == atmPin))
+		if(A.atmCardPin == atmPin)
 
 			
 			  {
@@ -50,14 +50,14 @@ public class ATM {
 
 	}
 
-	public double deposit(ATM A, int depositAmount) {
+	public double deposit(Person A, int depositAmount) {
 
 		accountBalance = A.accountBalance + depositAmount;
 		return accountBalance;
 
 	}
 
-	public double withdrawal(ATM A,  int withdrawalAMount) {
+	public double withdrawal(Person A,  int withdrawalAMount) {
 
 		{
 			accountBalance = A.accountBalance - withdrawalAMount;

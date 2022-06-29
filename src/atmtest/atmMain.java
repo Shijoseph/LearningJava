@@ -1,10 +1,11 @@
-package atmProject;
+package atmtest;
 
 import java.util.Scanner;
 
-public class ATMMain {
+public class atmMain {
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 
 		Person[] customerList = new Person[5];
 
@@ -23,81 +24,84 @@ public class ATMMain {
 		int withDrawalAmount = 0;
 		int depositAmount = 0;
 
-		boolean ifValidationSuccess = false;
+		boolean ifPinIsCorrect = false;
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Welcome to ABC Bank");
 		System.out.println("Please enter the 9-digit ATM CARD");
 		atmCardNum = sc.nextLong();
+
 		System.out.println("Please enter the 4 digit ATM pin number ");
 		pinNum = sc.nextInt();
 
 		for (int i = 0; i < customerList.length; i++) {
-			if (customerList[i].atmCardNumber == atmCardNum && (customerList[i].atmCardPin == pinNum)) {
+			if (customerList[i].atmCardNumber == atmCardNum) {
 				arrayNum = i;
+
+				ifPinIsCorrect = obj1.validatePin(customerList, pinNum, arrayNum);
 
 			}
 		}
-		ifValidationSuccess = (obj1.validation(customerList[arrayNum], pinNum));
 
-		if (ifValidationSuccess) {
+		if (ifPinIsCorrect) {
 
 			System.out.println("Choose 1 to Withdraw");
 			System.out.println("Choose 2 to Deposit");
 			System.out.println("Choose 3 to check balance");
-			System.out.println("Choose 4 to exit");
 
 			System.out.println("enter a valid option");
 
 			valueForOption = sc.nextInt();
 
-			switch (valueForOption)
+			switch (valueForOption) {
+			case 1: {
 
-			{
-			case 1:
-
-				obj1.accountdetails(customerList[arrayNum]);
-
+				obj1.accountdetails(customerList, arrayNum);
 				System.out.println("enter the amount to be withdrawn");
 				withDrawalAmount = sc.nextInt();
-				
 
-				if (customerList[arrayNum].accountBalance > withDrawalAmount && withDrawalAmount < 1500) {
-					System.out.println("balance in the account after withdrawal is  ="+obj1.withdrawal(customerList[arrayNum], withDrawalAmount));
-					
-				}
+				if (obj1.checkWithdrawalLimit(customerList, withDrawalAmount)) {
+					System.out.println("Account balance after withdrawal is  "
+							+ obj1.withdrawal(customerList, withDrawalAmount, arrayNum));
+					ifPinIsCorrect = false;
+					break;
+				} else
+					System.out.println(
+							"Withdrawal limit exceeds dailiy limit of 1500,kindly enter amount less than 1500");
 
-				else {
-					System.out.println("insufficient amount/daily withdrawl limit is 1500 ");
-
-				}
+				ifPinIsCorrect = true;
 				break;
 
-			case 2:
+			}
 
-				obj1.accountdetails(customerList[arrayNum]);
-
+			case 2: {
+				obj1.accountdetails(customerList, arrayNum);
 				System.out.println("enter the amount to deposit");
 				depositAmount = sc.nextInt();
-				if (depositAmount < 1500) {
-					System.out.println("balance in the account after deposit is  = "+obj1.deposit(customerList[arrayNum], depositAmount));
 
-				} else {
-					System.out.println("daily deposit limit is 1500");
-				}
+				if (obj1.checkDepositLimit(customerList, depositAmount)) {
+					System.out.println("Account balance after withdrawal is  "
+							+ obj1.deposit(customerList, depositAmount, arrayNum));
+					ifPinIsCorrect = false;
+					break;
+
+				} else
+					System.out.println(
+							"Deposit amount limit exceeds dailiy limit of 1500,kindly enter amount less than 1500");
+
+				ifPinIsCorrect = true;
 				break;
-
-			case 3:
-				obj1.accountdetails(customerList[arrayNum]);
-
-				break;
-
-			default: {
-				System.out.println("invalid selection");
+			}
+			case 3: {
+				obj1.accountdetails(customerList, arrayNum);
 
 			}
+			default: {
+				System.out.println("enter a valid option");
+
+			}
+
 			}
 		}
-
 	}
 }
