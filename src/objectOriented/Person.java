@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Person {
 	
 	String firstName;
-	String lastName;
+	public String lastName;
 	Scanner sc = new Scanner(System.in);
 	
 	String changeLastName()

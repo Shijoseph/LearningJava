@@ -86,6 +86,7 @@ public class TestMain {
 		// indexOf() is used to search for the first occurrence of the character.
 		// lastIndexOf() is used to search for the last occurrence of the character.
 
+		// for charater place it inside" "
 		System.out.println(obj1.officeAddress.indexOf('e'));
 		System.out.println(obj2.nameOfEmployee.indexOf('d'));
 
@@ -102,7 +103,10 @@ public class TestMain {
 
 		// 11/String replace()
 		// The replace() method is used to replace the character with the new characters
-		// in a String.
+		// in a String
+
+		// to replace one char use ' '
+		// to replace string use " "
 
 		System.out.println(obj3.nameOfEmployee.replace('u', 'o'));
 		System.out.println(obj2.officeAddress.replace('d', 'o'));
@@ -110,13 +114,24 @@ public class TestMain {
 		// 12.Substring Method()
 		// The Substring() method is used to return the substring of the main String by
 		// specifying the starting index and the last index of the substring.
-		
-		//3 6- 4to 6 will be displayed
-		//2-5  -3 to 5 will be displayed
-		
+
+		// 3 6- 4to 6 will be displayed
+		// 2-5 -3 to 5 will be displayed
+
 		System.out.println(obj1.nameOfEmployee.substring(2, 3));
 		System.out.println(obj2.officeAddress.substring(3, 6));
 
-	}
+		String[] names = { "albin", "jei", "rijo", "jithin" };
 
+		for (int i = 0; i < names.length; i++) {
+			if (names.equals("jerin")) {
+				System.out.println("jerin is present in the class");
+				break;
+			} else {
+				System.out.println("jerrin is absent");
+				break;
+			}
+
+		}
+	}
 }

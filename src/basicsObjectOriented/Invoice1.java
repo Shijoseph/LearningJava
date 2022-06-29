@@ -1,24 +1,22 @@
 package basicsObjectOriented;
 
 public class Invoice1 {
-	
-	double pricebeforetax=0;
-	double priceaftertax=0;
-	
-	
-	double  finalInvoice(Product1[] productdetails)
-	{
-		for(int s= 0;s<productdetails.length;s++)
-		{
-			
-			pricebeforetax += productdetails[s].price* productdetails[s].quantity;
+
+	double totalPrice = 0;
+
+	double finalInvoice(Product1[] productdetails) {
+		for (int s = 0; s < productdetails.length; s++) {
+
+			totalPrice += productdetails[s].price * productdetails[s].quantity;
+
 		}
-		return pricebeforetax;
+		// totalPrice= valueAfterTax(1.13);
+		// return totalPrice;
+		return valueAfterTax(1.13);
 	}
-	
-	double valueAfterTax()
-	{ priceaftertax = pricebeforetax*1.03;
-		return priceaftertax;
+
+	private double valueAfterTax(double taxPercent) {
+		return totalPrice * taxPercent;
+
 	}
 }
-

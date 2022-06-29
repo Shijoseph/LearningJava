@@ -33,8 +33,8 @@ public class Product1Main {
 		productList[8] = icecream;
 		productList[9] = cheese;
 		
-		System.out.println("price before tax  ="+invoiceDetails.finalInvoice(productList));
-		System.out.println("price after tax =  "+invoiceDetails.valueAfterTax());
+		System.out.println("price after tax  ="+invoiceDetails.finalInvoice(productList));
+		//System.out.println("price after tax =  "+invoiceDetails.valueAfterTax(1.13));
 	}
 
 }
