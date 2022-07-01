@@ -1,4 +1,4 @@
-package atmtest;
+package atmreworked;
 
 public class Person {
 
@@ -25,41 +25,41 @@ public class Person {
 
 	}
 // to display persons details
-	public void accountdetails(Person[] person,int i) {
+	public void accountdetails(Person []person,int i) {
 		System.out.println("name of the accoutn holder is = " + person[i].accountHoldersName);
 		System.out.println("account type is  = " + person[i].accountType);
 		System.out.println(" balance in the account is  " + person[i].accountBalance);
 
 	}
 // to validate account details
-	public boolean ValidateAccount(Person [] person, long AtmCardNum,int i) {
+	public boolean ValidateAccount(Person[]person, long AtmCardNum,int i) {
 
 		if (person[i].atmCardNumber == AtmCardNum)
 
 		{
-			
+			System.out.println("card validation successful");
 			return true;
 		}
 
 		else
 
-		
+			System.out.println("card validation failed");
 		return false;
 	}
 //to validate pin details
-	public boolean validatePin(Person[] person, int atmPin,int i)
+	public boolean validatePin(Person []person, int atmPin,int i)
 
 	{
 		if (person[i].atmCardPin == atmPin)
 
-		{
+		{System.out.println("pin validation successful");
 			return true;
 
 		}
 
 		else
 			
-			
+			System.out.println("PIN validation failed");
 		return false;
 
 	}
@@ -98,7 +98,7 @@ public class Person {
 	
 	}
 //to withdraw amount
-	public double withdrawal(Person [] person, int withdrawalAmount,int i) {
+	public double withdrawal(Person[]  person, int withdrawalAmount,int i) {
 
 		{if( withdrawalAmount < person[i].accountBalance)
 		{System.out.println("Withdrwal processing");

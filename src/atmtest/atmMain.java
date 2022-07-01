@@ -23,7 +23,7 @@ public class atmMain {
 		int valueForOption = 0;
 		int withDrawalAmount = 0;
 		int depositAmount = 0;
-
+		boolean ifAccountCorrect = false;
 		boolean ifPinIsCorrect = false;
 
 		Scanner sc = new Scanner(System.in);
@@ -37,71 +37,89 @@ public class atmMain {
 		for (int i = 0; i < customerList.length; i++) {
 			if (customerList[i].atmCardNumber == atmCardNum) {
 				arrayNum = i;
+				ifAccountCorrect = obj1.ValidateAccount(customerList, atmCardNum, arrayNum);
 
 				ifPinIsCorrect = obj1.validatePin(customerList, pinNum, arrayNum);
 
 			}
+
 		}
 
-		if (ifPinIsCorrect) {
+		if (ifAccountCorrect)
 
-			System.out.println("Choose 1 to Withdraw");
-			System.out.println("Choose 2 to Deposit");
-			System.out.println("Choose 3 to check balance");
+		{
+			System.out.println("card validation successful");
 
-			System.out.println("enter a valid option");
+			if (ifPinIsCorrect) {
+				System.out.println("pin validation successful");
 
-			valueForOption = sc.nextInt();
+				System.out.println("Choose 1 to Withdraw");
+				System.out.println("Choose 2 to Deposit");
+				System.out.println("Choose 3 to check balance");
+				System.out.println("choose 4 to exit ");
 
-			switch (valueForOption) {
-			case 1: {
+				valueForOption = sc.nextInt();
 
-				obj1.accountdetails(customerList, arrayNum);
-				System.out.println("enter the amount to be withdrawn");
-				withDrawalAmount = sc.nextInt();
+	
+				{
+					switch (valueForOption) {
+					case 1: {
 
-				if (obj1.checkWithdrawalLimit(customerList, withDrawalAmount)) {
-					System.out.println("Account balance after withdrawal is  "
-							+ obj1.withdrawal(customerList, withDrawalAmount, arrayNum));
-					ifPinIsCorrect = false;
-					break;
-				} else
-					System.out.println(
-							"Withdrawal limit exceeds dailiy limit of 1500,kindly enter amount less than 1500");
+						obj1.accountdetails(customerList, arrayNum);
+						System.out.println("enter the amount to be withdrawn");
+						withDrawalAmount = sc.nextInt();
 
-				ifPinIsCorrect = true;
-				break;
+						if (obj1.checkWithdrawalLimit(customerList, withDrawalAmount)) {
+							System.out.println("Account balance after withdrawal is  "
+									+ obj1.withdrawal(customerList, withDrawalAmount, arrayNum));
+							ifPinIsCorrect = false;
+							break;
+						} else
+							System.out.println(
+									"Withdrawal limit exceeds dailiy limit of 1500,kindly enter amount less than 1500");
+
+						ifPinIsCorrect = true;
+						break;
+
+					}
+
+					case 2: {
+						obj1.accountdetails(customerList, arrayNum);
+						System.out.println("enter the amount to deposit");
+						depositAmount = sc.nextInt();
+
+						if (obj1.checkDepositLimit(customerList, depositAmount)) {
+							System.out.println("Account balance after withdrawal is  "
+									+ obj1.deposit(customerList, depositAmount, arrayNum));
+							ifPinIsCorrect = false;
+							break;
+
+						} else
+							System.out.println(
+									"Deposit amount limit exceeds dailiy limit of 1500,kindly enter amount less than 1500");
+
+						ifPinIsCorrect = true;
+						break;
+					}
+					case 3: {
+						obj1.accountdetails(customerList, arrayNum);
+
+					}
+					default: {
+						System.out.println();
+
+					}
+
+					}
+
+			}}
+			else {
+				System.out.println("PIN validation failed");
 
 			}
-
-			case 2: {
-				obj1.accountdetails(customerList, arrayNum);
-				System.out.println("enter the amount to deposit");
-				depositAmount = sc.nextInt();
-
-				if (obj1.checkDepositLimit(customerList, depositAmount)) {
-					System.out.println("Account balance after withdrawal is  "
-							+ obj1.deposit(customerList, depositAmount, arrayNum));
-					ifPinIsCorrect = false;
-					break;
-
-				} else
-					System.out.println(
-							"Deposit amount limit exceeds dailiy limit of 1500,kindly enter amount less than 1500");
-
-				ifPinIsCorrect = true;
-				break;
-			}
-			case 3: {
-				obj1.accountdetails(customerList, arrayNum);
-
-			}
-			default: {
-				System.out.println("enter a valid option");
-
-			}
-
-			}
+		} else {
+			System.out.println("card validation failed");
 		}
+
 	}
 }
