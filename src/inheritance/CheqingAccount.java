@@ -1,5 +1,14 @@
 package inheritance;
 
-public class CheqingAccount extends Accounts {
 
-}
+
+public class CheqingAccount extends Accounts {
+	
+
+	
+
+	}
+	
+	
+
+
