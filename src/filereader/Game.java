@@ -58,7 +58,7 @@ public class Game {
 		System.out.println(character);
 		System.out.println(dummy);
 
-		Game2 game = new Game2();
+		
 		
 		for (int k = 0; k < 50; k++)
 
